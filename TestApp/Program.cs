@@ -25,6 +25,8 @@ namespace TestApp
             //Console.WriteLine("Encode: Awesome_Job! -> " + encodedString);
             //string saveEncodedString = encodedString;
 
+            //Just some branch Code...
+
             //test = new Enigma(settings);
             //encodedString = test.PermString(encodedString);
             //Console.WriteLine("Decode: " + saveEncodedString + " -> " + encodedString);
