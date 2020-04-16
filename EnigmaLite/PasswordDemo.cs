@@ -13,6 +13,10 @@ namespace EnigmaLite
 
         public PasswordDemo(int maxLength, int minLength)
         {
+            if (maxLength > 50)
+            {
+                throw new ArgumentOutOfRangeException(nameof(maxLength), "Please use a length of 50 or less");
+            }
             _maxLength = maxLength;
             _minLength = minLength;
         }
@@ -24,7 +28,7 @@ namespace EnigmaLite
                 Enigma enigma = new Enigma(new char[] { password[0], password[password.Length - 1], password[password.Length / 2] });
 
                 Random rand = new Random(DateTime.Now.Millisecond);
-                int fillerLength = 20 - password.Length;
+                int fillerLength = _maxLength - password.Length;
                 char fillerLetter = (char)rand.Next(33, 123);
                 string fillerString = "";
                 for (int i = 0; i < fillerLength; i++)
